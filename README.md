@@ -1,16 +1,21 @@
-# Sample AEM project template
+# AEM CQ Spell Checker Utility
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+The project aem spell checker has been created  using maven archetype 7 project.
 
 ## Modules
 
-The main parts of the template are:
+Spell checker utility consists of two modules. Spell checking in both the modules in done using Jazzy spell checker utility. It is a very common spell checking utility used in J2ee projects. It is easy to integrate it with existing projects as well. All the code is servlet based which are registered under /bin/aemfeatures/* so this path should be enabled in case you want to run this code via dispatcher. The servlets have properties to provided phonet and dictionary files. Currently, both of these files have to live under crx-quickstart/conf directory. Samples files have been checked into the core/resource directory. Adding a word is a simple as adding in the en.0 file. Below should be modified in SpellCheckerServlet if you want to put directory in a custom field.
 
-* core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs as well as Hobbes-tests
-* ui.content: contains sample content using the components from the ui.apps
-* ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
-* ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
+@SlingServlet(paths="/bin/aemfeatures/spellChecker", metatype=true)
+@Properties(value = {
+		@Property(label="dictionary.location",name = "dictionary.location", value = "crx-quickstart/conf/en.0"),
+		@Property(label="phonet.location",name = "phonet.location", value = "crx-quickstart/conf/phonet.en")})    
+
+1) Global Spell Checker -: The global spell checker allows you to spell check the whole website in one go. You should have access to latest content package for running this module. The project only works on the publisher instance as for each page a server request is made and dom in parsed and misspelled words are found. The logic to do all the iteration is quite fast. Whole Geometrixx was parsed and spell checked in 20-30 seconds. Once the results are returned all the words with their pages references are downloaded to users computer automatically as csv. 
+
+The spell checker was also extended to provide a raw .txt file with comma separated words which will not be returned in the csv list.  
+
+2) Page Spell Checker -: It is a single page spell checking mechanism. Whatever misspelled words are found on the page they get highlighted in yellow much like what happens with RTE spell checking utility. All the misspelled words are found first and then Jquery highlighter plugin highlights them in yellow colour on the page.
 
 ## How to build
 
@@ -32,19 +37,7 @@ Or to deploy only the bundle to the author, run
 
 ## Testing
 
-There are three levels of testing contained in the project:
-
-* unit test in core: this show-cases classic unit testing of the code contained in the bundle. To test, execute:
-
-    mvn clean test
-
-* server-side integration tests: this allows to run unit-like tests in the AEM-environment, ie on the AEM server. To test, execute:
-
-    mvn clean integration-test -PintegrationTests
-
-* client-side Hobbes.js tests: JavaScript-based browser-side tests that verify browser-side behavior. To test:
-
-    in the browser, open the page in 'Developer mode', open the left panel and switch to the 'Tests' tab and find the generated 'MyName Tests' and run them.
+Testing of the framework can be done by 
 
 
 ## Maven settings
