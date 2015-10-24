@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2015-10-19T23:36:32.916+11:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2015-10-20T23:20:08.551+11:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/aemfeatures/templates/base-template-content"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="base-template-content"
+        jcr:uuid="9264103b-98b9-481c-bc5d-ca295d73e2e7"
+        sling:resourceType="/apps/aemfeatures/components/page/baseComponent"/>
+</jcr:root>

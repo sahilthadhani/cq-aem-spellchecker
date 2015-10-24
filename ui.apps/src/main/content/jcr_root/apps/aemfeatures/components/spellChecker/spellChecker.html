@@ -1,4 +1,9 @@
+<div data-sly-include="init.jsp"></div>
+
 <div data-sly-include="/libs/foundation/global.jsp" data-sly-unwrap></div>
+
+<div data-sly-call="${clientLib.all @ categories=['aemfeatures']}"
+	data-sly-unwrap></div>
 
 <div class="reformed-form">
 	<form method="post" name="SpellChecker" id="SpellChecker" enctype="multipart/form-data" action ="/bin/aemfeatures/spellCheckerExtended">
@@ -21,7 +26,7 @@
 				<input type="file" id="file" name="file" accept=".txt" />
 			</dd>
 		</dl>
-		<dl>
+		<!-- <dl>
 			<dt>
 				<label for="language">Choose the language to Parse</label>
 			</dt>
@@ -32,7 +37,7 @@
 					<option value="es">Spanish</option>
 				</select>
 			</dd>
-		</dl>
+		</dl> -->
 		<dl>
 			<dt>
 			</dt>
