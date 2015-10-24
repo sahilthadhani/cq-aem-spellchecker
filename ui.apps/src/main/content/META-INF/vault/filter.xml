@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+	<filter root="/apps/aemfeatures">
+		<exclude pattern="/apps/aemfeatures/install" />
+	</filter>
+	<filter root="/apps/sling" mode="merge"/>
+    <filter root="/etc/designs/aemfeatures"/>
+    <filter root="/apps/cq/ui/widgets/source/widgets/wcm"/>
+    <filter root="/apps/cq/ui/widgets/themes/default/widgets/wcm/launches"/>
+</workspaceFilter>

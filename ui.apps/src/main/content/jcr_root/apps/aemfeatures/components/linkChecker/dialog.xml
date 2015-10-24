@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="nt:unstructured"
+        xtype="panel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <siteToParse
+                jcr:primaryType="nt:unstructured"
+                allowBlank="false"
+                fieldLabel="Site to Parse for broken Links"
+                fieldDescription="Select the site under which all links will be checked"
+                rootPath="/content"
+                name="./siteToParse"
+                xtype="pathfield"/>
+            <shouldParseDam
+                jcr:primaryType="nt:unstructured"
+                fieldDescription="If Checked the img tags will be parsed alongside of Anchor tags"
+                fieldLabel="Should dam be parsed as well?"
+				name="./shouldParseDam"
+                type="selection"
+                xtype="checkbox"/>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,23 @@
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.siteToParse}" data-sly-unwrap>
+		Please use the editbar to edit the component
+</div>
+
+<div data-sly-test="${properties.siteToParse}" data-sly-unwrap>
+
+<br/><br/><br/><br/>
+		<form>
+			<label> Site to Parse for broken links
+			<input type="text" value="${properties.siteToParse}"/>
+			</label><br/>
+			<label>Should dam be parsed as well?
+			<div data-sly-test="${properties.shouldParseDam=='on'}" data-sly-unwrap>
+				<input type="checkbox" checked/>
+			</div>
+			<div data-sly-test="${!properties.shouldParseDam}" data-sly-unwrap>
+				<input type="checkbox"/>
+			</div>
+			</label><br/>
+			<input type="button" value="fetch report" id="linkCheckerReport"/>
+		</form>
+		
+</div>

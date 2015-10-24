@@ -1,0 +1,52 @@
+<div data-sly-include="init.jsp"></div>
+
+<div data-sly-include="/libs/foundation/global.jsp" data-sly-unwrap></div>
+
+<div data-sly-call="${clientLib.all @ categories=['aemfeatures']}"
+	data-sly-unwrap></div>
+
+<div class="reformed-form">
+	<form method="post" name="SpellChecker" id="SpellChecker" enctype="multipart/form-data" action ="/bin/aemfeatures/spellCheckerExtended">
+		<dl>
+			<dt>
+				<label for="siteSection">Site Section to Parse for Spell
+					Checking</label>
+			</dt>
+			<dd>
+				<input type="text" id="siteSection" name="siteSection"
+					value="/content/geometrixx/en" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ignoreWords">Comma separated file (.txt) to
+					ignore words</label>
+			</dt>
+			<dd>
+				<input type="file" id="file" name="file" accept=".txt" />
+			</dd>
+		</dl>
+		<!-- <dl>
+			<dt>
+				<label for="language">Choose the language to Parse</label>
+			</dt>
+			<dd>
+				<select size="1" name="language" id="language">
+					<option value="en">English</option>
+					<option value="fr">French</option>
+					<option value="es">Spanish</option>
+				</select>
+			</dd>
+		</dl> -->
+		<dl>
+			<dt>
+			</dt>
+			<dd>
+				<div id="submit_buttons">
+					<button type="reset">Reset</button>
+					<button id="spellSubmit">Submit</button>
+				</div>
+			</dd>
+		</dl>
+	</form>
+</div>

@@ -1,0 +1,15 @@
+/*fix background bleed of fieldset in IE 7*/
+form fieldset{
+    position: relative !important;
+    margin-top:1.75em !important;
+    padding-top:.75em !important;
+}
+
+form legend{
+    position:absolute !important;
+    top: -1.5em !important;
+    left: .5em !important;
+}
+
+
+
