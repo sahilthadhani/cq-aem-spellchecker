@@ -3669,6 +3669,7 @@ CQ.wcm.Sidekick = CQ.Ext.extend(CQ.Dialog, {
         			success: 
         				function(data, textStatus, xhr) {
 					    $("body").highlight($.unique(xhr.responseJSON));
+					    $('iframe').contents().find('body').highlight($.unique(xhr.responseJSON), {wordsOnly: true});
         			},
         			error: 
         				function(xhr, textStatus, errorThrown) {
