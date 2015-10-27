@@ -46,3 +46,7 @@ The project comes with the auto-public repository configured. To setup the repos
 
     http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
 # cq-aem-spellchecker 
+
+#Presentation URL
+
+http://s000.tinyupload.com/index.php?file_id=07741188365781537109
